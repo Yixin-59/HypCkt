@@ -1,0 +1,53 @@
+model:
+  name: hypckt
+
+data:
+  root_dir: OCB/CktBench101
+
+dataset:
+  max_n: 8
+  nvt: 26
+  subn_nvt: 103
+  max_pos: 8
+  START_TYPE: 0
+  END_TYPE: 1
+
+encoder:
+  emb_dim: 24
+  feat_emb_dim: 8
+  hs: 301
+  pos: true
+  bidirectional: false
+  topo_feat_scale: 0.01
+
+manifold:
+  c_init: 1.0
+  learnable_curvature: true
+
+vae:
+  latent_dim: 32
+  kl_n_samples: 1
+  eps_scale: 1.0
+
+decoder:
+  scale: true
+  scale_factor: 102
+
+training:
+  lr: 1.0e-3
+  batch_size: 64
+  epochs: 300
+  seed: 1
+  save_interval: 50
+  grad_clip: 5.0
+  beta_default: 0.005
+  beta_anneal:
+    enabled: false
+    start: 0.0
+    end: 1.0
+    anneal_epochs: 20
+  scheduler:
+    factor: 0.1
+    patience: 30
+
+save_dir: results/hypckt
