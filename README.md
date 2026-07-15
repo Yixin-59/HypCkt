@@ -1,6 +1,6 @@
 # HypCkt
 
-Official implementation of **HypCkt: A Hyperbolic Variational Framework for
+**HypCkt: A Hyperbolic Variational Framework for
 Analog Circuit Topology Generation**.
 
 HypCkt models subgraph-level circuit DAGs in the Poincare ball. The encoder
@@ -25,15 +25,8 @@ pip install -r requirements.txt
 
 ## Dataset
 
-Download Ckt-Bench-101 from the
+Download OCB datasets from the
 [Open Circuit Benchmark repository](https://github.com/zehao-dong/CktGNN)
-and place the data at:
-
-```text
-OCB/CktBench101/ckt_bench_101.pkl
-```
-
-The path can be changed through `data.root_dir` in `configs/hypckt.yaml`.
 
 ## Training
 
@@ -57,9 +50,3 @@ python scripts/eval.py \
 
 The evaluation reports reconstruction accuracy, valid-DAG rate, valid-circuit
 rate, and novelty.
-
-## Acknowledgements
-
-The circuit representation and Euclidean autoregressive decoder are adapted
-from [CktGNN](https://github.com/zehao-dong/CktGNN). Hyperbolic operations use
-[geoopt](https://github.com/geoopt/geoopt).
